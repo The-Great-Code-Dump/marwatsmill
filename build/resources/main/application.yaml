@@ -1,0 +1,15 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+  jackson:
+    serialization:
+      indent-output: true
+      write-dates-as-timestamps: false
+      fail-on-empty-beans: false
+    deserialization:
+      fail-on-unknown-properties: false
+
+twitter:
+  url: ${TWITTER_BASEURL}
+  bearerToken: ${TWITTER_BEARER_TOKEN}

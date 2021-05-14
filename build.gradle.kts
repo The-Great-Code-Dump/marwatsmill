@@ -1,58 +1,39 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        maven { setUrl("https://packages.confluent.io/maven/") }
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-    }
-    dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.0")
-        classpath("com.github.jengelman.gradle.plugins:shadow:6.1.0")
-    }
-
-}
 plugins {
-    java
-    application
+	id("org.springframework.boot") version "2.4.5"
+	id("io.spring.dependency-management") version "1.0.11.RELEASE"
+	kotlin("jvm") version "1.4.32"
+	kotlin("plugin.spring") version "1.4.32"
 }
 
-apply {
-    plugin("java")
-    plugin("kotlin")
-    plugin("application")
-    plugin("com.github.johnrengelman.shadow")
-}
-
-application {
-    project.setProperty("mainClassName", "uk.tojourn.MainKt")
-}
+group = "uk.tojourn"
+version = "0.0.1-SNAPSHOT"
+java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
-    mavenCentral()
-    maven { setUrl("https://packages.confluent.io/maven/") }
-
+	mavenCentral()
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.5.0")
-    implementation("org.jetbrains.kotlin:kotlin-reflect:1.5.0")
+	implementation("org.springframework.boot:spring-boot-starter")
+	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	implementation("org.springframework.kafka:spring-kafka")
+	implementation("org.apache.httpcomponents:httpclient:4.5.13")
+	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.springframework.kafka:spring-kafka-test")
 
-    // fake data generator
-    implementation("com.github.javafaker:javafaker:0.15")
 
-    // logging
-    implementation("io.github.microutils:kotlin-logging-jvm:2.0.6")
-    implementation( "org.slf4j:slf4j-simple:1.7.29")
-    // JSON serialization
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.12.3")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.3")
-
-    // Kafka
-    implementation("org.apache.kafka:kafka-clients:2.8.0")
-
-    // Http Client
-    implementation("com.github.kittinunf.fuel:fuel:2.3.1")
-
-    //DI
-    implementation("io.insert-koin:koin-core:2.2.2")
 }
 
+tasks.withType<KotlinCompile> {
+	kotlinOptions {
+		freeCompilerArgs = listOf("-Xjsr305=strict")
+		jvmTarget = "11"
+	}
+}
+
+tasks.withType<Test> {
+	useJUnitPlatform()
+}
