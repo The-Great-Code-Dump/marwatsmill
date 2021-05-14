@@ -13,12 +13,9 @@ data class TwitterStreamConfiguration(
 )
 
 fun TwitterStreamConfiguration.isNotValidConfiguraion(): Boolean {
-        val credentials = listOfNotNull(
-                this.apiKey,
+        val credentials = listOfNotNull(this.apiKey,
                 this.apiSecretKey,
                 this.accessToken,
-                this.accessTokenSecret
-        )
-
+                this.accessTokenSecret)
         return credentials.isNotEmpty() && credentials.any { it == "" }
 }
