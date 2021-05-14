@@ -1,0 +1,14 @@
+server:
+  port: 8085
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: [ "*" ]
+
+twitter:
+  apiKey: ${API_KEY}
+  apiSecretKey: ${API_SECRET_KEY}
+  accessToken: ${ACCESS_TOKEN}
+  accessTokenSecret: ${ACCESS_SECRET_TOKEN}
