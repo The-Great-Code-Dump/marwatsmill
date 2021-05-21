@@ -23,17 +23,12 @@ fun BufferedReader.getNextTweet(): Tweet {
 private val logger = KotlinLogging.logger { }
 
 @Component
-class StreamProcessor(val consumer: StreamConsumer) {
+class StreamProcessor(val twitterRepo: TwitterReactiveClient) {
     fun processTweets() {
-        val tweetBuffer = consumer.connectStream()
-        when(val tweet = tweetBuffer.getNextTweet()) {
-            is PopulatedTweet -> {
-                logger.info { tweet.tweet }
-            }
-            is NoTweet -> {
-                logger.info { "No more tweets " }
-            }
-        }
+        twitterRepo
+            .getTweets()
+            .doOnEach { logger.info { it } }
+            .subscribe()
     }
 }
 
