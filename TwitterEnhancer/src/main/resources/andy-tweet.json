@@ -1,0 +1,169 @@
+{
+  "data": {
+    "created_at": "2020-04-11T19:36:21.000Z",
+    "author_id": "300987348",
+    "entities": {
+      "mentions": [
+        {
+          "start": 17,
+          "end": 30,
+          "username": "HopCityLeeds"
+        },
+        {
+          "start": 61,
+          "end": 67,
+          "username": "NMBCo"
+        }
+      ],
+      "urls": [
+        {
+          "start": 120,
+          "end": 143,
+          "url": "https://t.co/OvGpNhaAE9",
+          "expanded_url": "https://twitter.com/marr06/status/1249058725547200513/photo/1",
+          "display_url": "pic.twitter.com/OvGpNhaAE9"
+        },
+        {
+          "start": 120,
+          "end": 143,
+          "url": "https://t.co/OvGpNhaAE9",
+          "expanded_url": "https://twitter.com/marr06/status/1249058725547200513/photo/1",
+          "display_url": "pic.twitter.com/OvGpNhaAE9"
+        },
+        {
+          "start": 120,
+          "end": 143,
+          "url": "https://t.co/OvGpNhaAE9",
+          "expanded_url": "https://twitter.com/marr06/status/1249058725547200513/photo/1",
+          "display_url": "pic.twitter.com/OvGpNhaAE9"
+        }
+      ],
+      "annotations": [
+        {
+          "start": 105,
+          "end": 112,
+          "probability": 0.4861,
+          "type": "Organization",
+          "normalized_text": "Hop City"
+        }
+      ]
+    },
+    "reply_settings": "everyone",
+    "public_metrics": {
+      "retweet_count": 0,
+      "reply_count": 0,
+      "like_count": 7,
+      "quote_count": 0
+    },
+    "source": "Twitter for Android",
+    "text": "Unfortunatley no @HopCityLeeds today, so I thought I'd enjoy @NMBCo beer in insolation instead. Bring on Hop City 2021! https://t.co/OvGpNhaAE9",
+    "lang": "en",
+    "possibly_sensitive": false,
+    "attachments": {
+      "media_keys": [
+        "3_1249058710711930881",
+        "3_1249058716651073544",
+        "3_1249058721306685441"
+      ]
+    },
+    "context_annotations": [
+      {
+        "domain": {
+          "id": "65",
+          "name": "Interests and Hobbies Vertical",
+          "description": "Top level interests and hobbies groupings, like Food or Travel"
+        },
+        "entity": {
+          "id": "834828264786898945",
+          "name": "Drinks",
+          "description": "Drinks"
+        }
+      },
+      {
+        "domain": {
+          "id": "66",
+          "name": "Interests and Hobbies Category",
+          "description": "A grouping of interests and hobbies entities, like Novelty Food or Destinations"
+        },
+        "entity": {
+          "id": "834828445238431744",
+          "name": "Generic Drinks",
+          "description": "Generic Drinks"
+        }
+      },
+      {
+        "domain": {
+          "id": "67",
+          "name": "Interests and Hobbies",
+          "description": "Interests, opinions, and behaviors of individuals, groups, or cultures; like Speciality Cooking or Theme Parks"
+        },
+        "entity": {
+          "id": "850142258871418880",
+          "name": "Beer",
+          "description": "Beer"
+        }
+      }
+    ],
+    "id": "1249058725547200513",
+    "conversation_id": "1249058725547200513"
+  },
+  "includes": {
+    "users": [
+      {
+        "protected": false,
+        "username": "AndyMarwood",
+        "verified": false,
+        "description": "Enter generic phrases here",
+        "id": "300987348",
+        "location": "Leeds, England",
+        "name": "Andy Marwood",
+        "url": "",
+        "created_at": "2011-05-18T17:50:08.000Z",
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1249356095396741122/6Ikv34gi_normal.jpg",
+        "public_metrics": {
+          "followers_count": 49,
+          "following_count": 140,
+          "tweet_count": 660,
+          "listed_count": 0
+        }
+      },
+      {
+        "protected": false,
+        "username": "HopCityLeeds",
+        "verified": false,
+        "description": "The UK’s first hop-led beer festival. Returning for its 4th instalment July 2021 ⚡️ Enquiries hopcity@northernmonk.com",
+        "id": "806581484270342144",
+        "pinned_tweet_id": "1394606683553423360",
+        "location": "Leeds, England",
+        "name": "HOP CITY 2021",
+        "url": "https://t.co/PawTb7FDT4",
+        "created_at": "2016-12-07T19:29:46.000Z",
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1332031314338439169/Dxv5z2ve_normal.jpg",
+        "public_metrics": {
+          "followers_count": 4511,
+          "following_count": 1275,
+          "tweet_count": 1738,
+          "listed_count": 38
+        }
+      },
+      {
+        "protected": false,
+        "username": "NMBCo",
+        "verified": false,
+        "description": "Fresh from the North. @NMBCoRefectory // @NMRefectoryMCR",
+        "id": "1286728734",
+        "location": "LEEDS | THE NORTH | UK",
+        "name": "NORTHERN MONK",
+        "url": "https://t.co/eWWhHx4DIK",
+        "created_at": "2013-03-21T19:17:18.000Z",
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1345791916827357184/fgmXFI3t_normal.jpg",
+        "public_metrics": {
+          "followers_count": 28654,
+          "following_count": 1031,
+          "tweet_count": 12781,
+          "listed_count": 298
+        }
+      }
+    ]
+  }
+}
