@@ -15,12 +15,19 @@ repositories {
 	mavenCentral()
 }
 
+object Versions {
+	const val kotlintest = "4.6.0"
+}
+
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.springframework.kafka:spring-kafka")
+
+	// Jackson
+	implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.3")
 
 	// Http
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
@@ -31,8 +38,10 @@ dependencies {
 	// Testing
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.kafka:spring-kafka-test")
-
-
+	testImplementation("io.kotest:kotest-runner-junit5:${Versions.kotlintest}")
+	testImplementation("io.kotest:kotest-assertions-core:${Versions.kotlintest}")
+	testImplementation("io.kotest:kotest-property:${Versions.kotlintest}")
+	//testImplementation("io.kotlintest:kotlintest-extensions-spring:${Versions.kotlintest}")
 }
 
 tasks.withType<KotlinCompile> {

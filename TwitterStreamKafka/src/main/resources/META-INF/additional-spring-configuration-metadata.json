@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "twitter.url",
+      "type": "java.lang.String",
+      "description": "Description for twitter.url."
+    },
+    {
+      "name": "twitter.bearerToken",
+      "type": "java.lang.String",
+      "description": "Description for twitter.bearerToken."
+    }
+  ] }
