@@ -1,7 +1,9 @@
 package com.jm.twitterstream.dto
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 data class EnhancedTweet(
     @JsonProperty("data")
     val data: Data?,
@@ -20,6 +22,44 @@ data class Data(
     val conversationId: String?,
     @JsonProperty("created_at")
     val createdAt: String?,
+    @JsonProperty("in_reply_to_user_id")
+    val inReplyToUserId: String?,
+    @JsonProperty("entities")
+    val entities: Entities?,
+    @JsonProperty("id")
+    val id: String?,
+    @JsonProperty("lang")
+    val lang: String?,
+    @JsonProperty("possibly_sensitive")
+    val possiblySensitive: Boolean?,
+    @JsonProperty("public_metrics")
+    val publicMetrics: PublicMetrics?,
+    @JsonProperty("referenced_tweets")
+    val referencedTweets: List<ReferencedTweet>?,
+    @JsonProperty("reply_settings")
+    val replySettings: String?,
+    @JsonProperty("source")
+    val source: String?,
+    @JsonProperty("text")
+    val text: String?
+)
+
+data class Includes(
+        @JsonProperty("tweets")
+        val tweets: List<Tweet>?,
+        @JsonProperty("users")
+        val users: List<User>?
+)
+
+data class Tweet(
+    @JsonProperty("author_id")
+    val authorId: String?,
+    @JsonProperty("conversation_id")
+    val conversationId: String?,
+    @JsonProperty("context_annotations")
+    val contextAnnotations: List<ContextAnnotation>?,
+    @JsonProperty("created_at")
+    val createdAt: String?,
     @JsonProperty("entities")
     val entities: Entities?,
     @JsonProperty("id")
@@ -36,11 +76,6 @@ data class Data(
     val source: String?,
     @JsonProperty("text")
     val text: String?
-)
-
-data class Includes(
-    @JsonProperty("users")
-    val users: List<User>?
 )
 
 data class Attachments(
@@ -67,13 +102,13 @@ data class Entities(
 )
 
 data class PublicMetrics(
-    @JsonProperty("like_count")
+    @JsonProperty("like_count", required = false)
     val likeCount: Int?,
-    @JsonProperty("quote_count")
+    @JsonProperty("quote_count", required = false)
     val quoteCount: Int?,
-    @JsonProperty("reply_count")
+    @JsonProperty("reply_count", required = false)
     val replyCount: Int?,
-    @JsonProperty("retweet_count")
+    @JsonProperty("retweet_count", required = false)
     val retweetCount: Int?
 )
 
@@ -118,16 +153,35 @@ data class Mention(
 )
 
 data class Url(
-    @JsonProperty("display_url")
-    val displayUrl: String?,
-    @JsonProperty("end")
-    val end: Int?,
-    @JsonProperty("expanded_url")
-    val expandedUrl: String?,
-    @JsonProperty("start")
-    val start: Int?,
-    @JsonProperty("url")
-    val url: String?
+        @JsonProperty("description")
+        val description: String?,
+        @JsonProperty("display_url")
+        val displayUrl: String?,
+        @JsonProperty("end")
+        val end: Int?,
+        @JsonProperty("expanded_url")
+        val expandedUrl: String?,
+        @JsonProperty("images")
+        val images: List<Image>?,
+        @JsonProperty("start")
+        val start: Int?,
+        @JsonProperty("status")
+        val status: Int?,
+        @JsonProperty("title")
+        val title: String?,
+        @JsonProperty("unwound_url")
+        val unwoundUrl: String?,
+        @JsonProperty("url")
+        val url: String?
+)
+
+data class Image(
+        @JsonProperty("height")
+        val height: Int?,
+        @JsonProperty("url")
+        val url: String?,
+        @JsonProperty("width")
+        val width: Int?
 )
 
 data class User(
@@ -175,4 +229,11 @@ data class Hashtag(
     val start: Int?,
     @JsonProperty("tag")
     val tag: String?
+)
+
+data class ReferencedTweet(
+        @JsonProperty("id")
+        val id: String?,
+        @JsonProperty("type")
+        val type: String?
 )

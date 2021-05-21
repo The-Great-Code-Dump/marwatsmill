@@ -21,6 +21,12 @@ class TwitterService(val twitterStreamConfiguration: TwitterStreamConfiguration,
         return TwitterClient(twitterCredentials)
     }
 
+    fun getEnhancedTweetAsString(tweetId: String): String {
+        val twitterClient = getTwitterClient()
+
+        return twitterClient.requestHelperV2.getRequest(twitterClient.urlHelper.getTweetUrl(tweetId), String::class.java).get()
+    }
+
     fun getEnhancedTweet(tweetId: String): EnhancedTweet {
         val twitterClient = getTwitterClient()
 
