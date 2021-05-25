@@ -16,7 +16,7 @@ class EnhancedTweetAPI(val twitterService: TwitterService) {
     }
 
     @GetMapping(value = ["/twittered/rate"])
-    fun getRateLimit(): JsonNode? = twitterService.getTwitterClient().rateLimitStatus.resources["tweets"]
+    fun getRateLimit(): JsonNode? = twitterService.getRateLimit()
 
 
     @GetMapping(value = ["/twittered/{tweetId}"])

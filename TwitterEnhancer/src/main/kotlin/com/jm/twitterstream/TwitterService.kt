@@ -10,28 +10,23 @@ import org.springframework.stereotype.Service
 @Service
 class TwitterService(val twitterStreamConfiguration: TwitterStreamConfiguration, val mapper: ObjectMapper) {
 
-    fun getTwitterClient(): TwitterClient {
-        val twitterCredentials = TwitterCredentials.builder()
-                .accessToken(twitterStreamConfiguration.accessToken)
-                .accessTokenSecret(twitterStreamConfiguration.accessTokenSecret)
-                .apiKey(twitterStreamConfiguration.apiKey)
-                .apiSecretKey(twitterStreamConfiguration.apiSecretKey)
-                .build()
+    private val twitterClient = TwitterClient(createTwitterCredentials())
 
-        return TwitterClient(twitterCredentials)
-    }
+    private fun createTwitterCredentials() =
+        TwitterCredentials
+            .builder()
+            .accessToken(twitterStreamConfiguration.accessToken)
+            .accessTokenSecret(twitterStreamConfiguration.accessTokenSecret)
+            .apiKey(twitterStreamConfiguration.apiKey)
+            .apiSecretKey(twitterStreamConfiguration.apiSecretKey)
+            .build()
 
-    fun getEnhancedTweetAsString(tweetId: String): String {
-        val twitterClient = getTwitterClient()
+    fun getEnhancedTweetAsString(tweetId: String) = extractResponse(tweetId)
 
-        return twitterClient.requestHelperV2.getRequest(twitterClient.urlHelper.getTweetUrl(tweetId), String::class.java).get()
-    }
+    private fun extractResponse(tweetId: String) =
+        twitterClient.requestHelperV2.getRequest(twitterClient.urlHelper.getTweetUrl(tweetId), String::class.java).get()
 
-    fun getEnhancedTweet(tweetId: String): EnhancedTweet {
-        val twitterClient = getTwitterClient()
+    fun getEnhancedTweet(tweetId: String): EnhancedTweet = mapper.readValue(extractResponse(tweetId))
 
-        val response = twitterClient.requestHelperV2.getRequest(twitterClient.urlHelper.getTweetUrl(tweetId), String::class.java)
-
-        return mapper.readValue(response.get())
-    }
+    fun getRateLimit() = twitterClient.rateLimitStatus.resources["tweets"]
 }
