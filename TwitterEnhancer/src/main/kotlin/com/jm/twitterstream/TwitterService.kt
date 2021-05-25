@@ -21,12 +21,12 @@ class TwitterService(val twitterStreamConfiguration: TwitterStreamConfiguration,
             .apiSecretKey(twitterStreamConfiguration.apiSecretKey)
             .build()
 
-    fun getEnhancedTweetAsString(tweetId: String) = extractResponse(tweetId)
+    fun getEnhancedTweetAsString(tweetId: String) = makeRequest(tweetId)
 
-    private fun extractResponse(tweetId: String) =
+    private fun makeRequest(tweetId: String) =
         twitterClient.requestHelperV2.getRequest(twitterClient.urlHelper.getTweetUrl(tweetId), String::class.java).get()
 
-    fun getEnhancedTweet(tweetId: String): EnhancedTweet = mapper.readValue(extractResponse(tweetId))
+    fun getEnhancedTweet(tweetId: String): EnhancedTweet = mapper.readValue(makeRequest(tweetId))
 
     fun getRateLimit() = twitterClient.rateLimitStatus.resources["tweets"]
 }
