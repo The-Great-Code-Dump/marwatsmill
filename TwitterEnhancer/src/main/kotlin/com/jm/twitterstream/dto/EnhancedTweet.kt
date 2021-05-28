@@ -11,6 +11,7 @@ data class EnhancedTweet(
     val includes: Includes?
 )
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 data class Data(
     @JsonProperty("attachments")
     val attachments: Attachments?,
@@ -34,7 +35,7 @@ data class Data(
     val possiblySensitive: Boolean?,
     @JsonProperty("public_metrics")
     val publicMetrics: PublicMetrics?,
-    @JsonProperty("referenced_tweets")
+    @JsonProperty(value = "referenced_tweets", required = false)
     val referencedTweets: List<ReferencedTweet>?,
     @JsonProperty("reply_settings")
     val replySettings: String?,
@@ -232,8 +233,8 @@ data class Hashtag(
 )
 
 data class ReferencedTweet(
-        @JsonProperty("id")
-        val id: String?,
-        @JsonProperty("type")
-        val type: String?
+    @JsonProperty("id")
+    val id: String?,
+    @JsonProperty("type")
+    val type: String?
 )

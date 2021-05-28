@@ -1,10 +1,7 @@
-package uk.tojourn.twitterstreamkafka.twitter
+package uk.tojourn.twitterstreamkafka.config
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.boot.context.properties.ConstructorBinding
-import org.springframework.boot.context.properties.EnableConfigurationProperties
-import org.springframework.scheduling.annotation.EnableAsync
-import org.springframework.stereotype.Component
 
 @ConfigurationProperties(prefix = "twitter")
 @ConstructorBinding

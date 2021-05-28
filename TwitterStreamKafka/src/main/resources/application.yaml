@@ -10,7 +10,15 @@ spring:
     deserialization:
       fail-on-unknown-properties: false
 
+
+kafka:
+  server: localhost:9092
+  topics:
+    twitter: "tweets"
+
+
 twitter:
   url: ${TWITTER_BASEURL}
   bearerToken: ${TWITTER_BEARER_TOKEN}
-  rules: ""
+  rules:
+    covid: lockdown

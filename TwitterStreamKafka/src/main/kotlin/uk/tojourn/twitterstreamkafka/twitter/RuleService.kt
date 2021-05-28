@@ -4,13 +4,11 @@ import com.fasterxml.jackson.databind.JsonNode
 import mu.KotlinLogging
 import org.json.JSONArray
 import org.json.JSONObject
-import org.springframework.boot.context.event.ApplicationReadyEvent
-import org.springframework.context.event.EventListener
-import org.springframework.core.annotation.Order
 import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.BodyInserters
 import org.springframework.web.reactive.function.client.WebClient
 import org.springframework.web.reactive.function.client.bodyToMono
+import uk.tojourn.twitterstreamkafka.config.TwitterConfig
 
 private val logger = KotlinLogging.logger { }
 
@@ -21,7 +19,6 @@ val createRulesFunction: (Map<String, String>) -> String = { rules ->
 
     JSONObject().put("add", JSONArray(ruleArray)).toString()
 }
-
 
 @Service
 class RuleService(val webClient: WebClient, val config: TwitterConfig) {
@@ -50,6 +47,7 @@ class RuleService(val webClient: WebClient, val config: TwitterConfig) {
                     it?.get("id")?.textValue()
                 })
 
+        // TODO if no rules don't run
         val deleteRuleRequestBody = JSONObject()
                 .put("delete",
                         JSONObject().put("ids", existingRuleIds)

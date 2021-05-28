@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.client.WebClient
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
+import uk.tojourn.twitterstreamkafka.config.TwitterConfig
 
 private val logger = KotlinLogging.logger { }
 
@@ -22,11 +23,13 @@ class TwitterReactiveRepository(private val objectMapper: ObjectMapper, private 
         .filterWhen { Mono.just(!it.isNullOrBlank()) }
         .doOnNext { logger.debug { "Raw Response: $it" } }
         .flatMap {
-            Mono.fromCallable { objectMapper.readValue(it, TwitterResponse::class.java) }
-            .flux()
-            .onErrorResume { error ->
-                logger.error(error) { "Your mams a cunt: $error" }
-                Flux.empty()
+            Mono.fromCallable {
+                objectMapper.readValue(it, TwitterResponse::class.java)
             }
+                .flux()
+                .onErrorResume { error ->
+                    logger.error(error) { "An Error occured: $error" }
+                    Flux.empty()
+                }
         }
 }

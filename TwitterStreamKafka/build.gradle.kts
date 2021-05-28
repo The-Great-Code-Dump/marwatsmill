@@ -42,7 +42,7 @@ dependencies {
 	testImplementation("io.kotest:kotest-runner-junit5:${Versions.kotlintest}")
 	testImplementation("io.kotest:kotest-assertions-core:${Versions.kotlintest}")
 	testImplementation("io.kotest:kotest-property:${Versions.kotlintest}")
-	//testImplementation("io.kotlintest:kotlintest-extensions-spring:${Versions.kotlintest}")
+	annotationProcessor( "org.springframework.boot:spring-boot-configuration-processor")
 }
 
 tasks.withType<KotlinCompile> {

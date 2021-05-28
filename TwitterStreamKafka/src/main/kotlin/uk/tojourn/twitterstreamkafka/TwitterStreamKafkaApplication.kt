@@ -3,17 +3,27 @@ package uk.tojourn.twitterstreamkafka
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.context.properties.EnableConfigurationProperties
+import org.apache.kafka.clients.producer.ProducerConfig
 import org.springframework.boot.runApplication
+import org.springframework.kafka.core.KafkaTemplate
+import org.springframework.kafka.core.DefaultKafkaProducerFactory
+import org.springframework.kafka.core.ProducerFactory
+import org.apache.kafka.clients.producer.ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG
+import org.apache.kafka.clients.producer.ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG
+import org.apache.kafka.common.serialization.StringSerializer
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan
+import java.io.Serializable
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Primary
 import org.springframework.web.reactive.function.client.WebClient
-import uk.tojourn.twitterstreamkafka.twitter.TwitterConfig
+import org.springframework.kafka.annotation.EnableKafka
+import uk.tojourn.twitterstreamkafka.config.KafkaConfig
+import uk.tojourn.twitterstreamkafka.config.TwitterConfig
 
 @SpringBootApplication
-@EnableConfigurationProperties(value = [TwitterConfig::class])
+@ConfigurationPropertiesScan("uk.tojourn.twitterstreamkafka.config")
 class TwitterStreamKafkaApplication
 
 fun main(args: Array<String>) {
@@ -21,7 +31,9 @@ fun main(args: Array<String>) {
 }
 
 @Configuration
-class TwitterStreamKafkaApplicationConfig(val config: TwitterConfig) {
+@EnableKafka
+class TwitterStreamKafkaApplicationConfig(val twitterConfig: TwitterConfig, val props: KafkaConfig) {
+
     @Primary
     @Bean
     fun objectMapper(): ObjectMapper =
@@ -30,13 +42,30 @@ class TwitterStreamKafkaApplicationConfig(val config: TwitterConfig) {
     @Bean
     fun webClient(): WebClient =
             WebClient.builder()
-                    .baseUrl(config.url)
-                    .defaultHeader("Authorization", "Bearer ${config.bearerToken}")
-
+                    .baseUrl(twitterConfig.url)
+                    .defaultHeader("Authorization", "Bearer ${twitterConfig.bearerToken}")
                     .defaultHeader(
                             "Cookie",
                             "personalization_id=\"v1_EDnQr/y/NKEYHS9i1Z3jvA==\"; guest_id=v1%3A161978895237305609"
                     )
                     .defaultHeader("Content-type", "application/json")
                     .build()
+
+    @Bean
+    fun producerConfigs(): Map<String, Serializable?> {
+        return mapOf(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG to props.server,
+            KEY_SERIALIZER_CLASS_CONFIG to StringSerializer::class.java,
+            VALUE_SERIALIZER_CLASS_CONFIG to StringSerializer::class.java
+        )
+    }
+
+    @Bean
+    fun producerFactory(): ProducerFactory<String, String> {
+        return DefaultKafkaProducerFactory(producerConfigs())
+    }
+
+    @Bean
+    fun kafkaTemplate(): KafkaTemplate<String, String> {
+        return KafkaTemplate(producerFactory())
+    }
 }
