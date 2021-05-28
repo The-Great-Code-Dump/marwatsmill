@@ -25,6 +25,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.springframework.kafka:spring-kafka")
+	implementation("org.json:json:20210307")
 
 	// Jackson
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.3")

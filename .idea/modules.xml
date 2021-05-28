@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TwitterStream.iml" filepath="$PROJECT_DIR$/.idea/modules/TwitterStream.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TwitterStream.main.iml" filepath="$PROJECT_DIR$/.idea/modules/TwitterStream.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TwitterStream.test.iml" filepath="$PROJECT_DIR$/.idea/modules/TwitterStream.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/marwatsmill.iml" filepath="$PROJECT_DIR$/.idea/marwatsmill.iml" />
     </modules>
   </component>

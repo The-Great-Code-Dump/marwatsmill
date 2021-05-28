@@ -11,5 +11,5 @@ import org.springframework.stereotype.Component
 data class TwitterConfig(
     val bearerToken: String? = null,
     val url: String = "https://api.twitter.com/2/tweets/search/stream",
-    val rules: String? = ""
+    val rules: Map<String, String>
 )

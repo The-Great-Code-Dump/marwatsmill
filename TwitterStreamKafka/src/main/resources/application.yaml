@@ -13,4 +13,4 @@ spring:
 twitter:
   url: ${TWITTER_BASEURL}
   bearerToken: ${TWITTER_BEARER_TOKEN}
- # rules: ""
+  rules: ""
