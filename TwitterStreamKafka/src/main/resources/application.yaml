@@ -21,4 +21,4 @@ twitter:
   url: ${TWITTER_BASEURL}
   bearerToken: ${TWITTER_BEARER_TOKEN}
   rules:
-    covid: lockdown
+    general: andrew

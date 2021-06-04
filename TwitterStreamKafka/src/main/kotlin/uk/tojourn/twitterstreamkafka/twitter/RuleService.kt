@@ -13,7 +13,7 @@ import uk.tojourn.twitterstreamkafka.config.TwitterConfig
 private val logger = KotlinLogging.logger { }
 
 val createRulesFunction: (Map<String, String>) -> String = { rules ->
-    val ruleArray = rules.map {
+    val ruleArray: List<JSONObject> = rules.map {
         JSONObject().put("value", "(${it.value}) lang:en").put("tag", it.key)
     }
 
@@ -53,15 +53,12 @@ class RuleService(val webClient: WebClient, val config: TwitterConfig) {
                         JSONObject().put("ids", existingRuleIds)
                 )
 
-        webClient.post()
+            webClient.post()
                 .uri(config.url + "/rules")
-                .body(
-                        BodyInserters.fromValue(
-                                deleteRuleRequestBody.toString()
-                        )
-                )
+                .body(BodyInserters.fromValue(deleteRuleRequestBody.toString()))
                 .retrieve()
                 .bodyToMono<String>()
                 .block()
+        }
     }
 }

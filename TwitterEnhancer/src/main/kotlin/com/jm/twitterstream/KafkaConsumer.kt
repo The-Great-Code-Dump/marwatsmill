@@ -14,7 +14,7 @@ class KafkaConsumer(val twitterService: TwitterService) {
     fun listen(@Payload tweet: String) {
         logger.info { "Twitter ID : \"$tweet\"" }
 
-        val superTweet = twitterService.getEnhancedTweetAsString(tweet)
+        val superTweet = twitterService.getEnhancedTweet(tweet)
 
         logger.info { superTweet }
 
