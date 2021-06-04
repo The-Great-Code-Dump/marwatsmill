@@ -71,12 +71,21 @@ data class Tweet(
     val possiblySensitive: Boolean?,
     @JsonProperty("public_metrics")
     val publicMetrics: PublicMetrics?,
+    @JsonProperty("geo")
+    val geo: Geo?,
     @JsonProperty("reply_settings")
     val replySettings: String?,
     @JsonProperty("source")
     val source: String?,
     @JsonProperty("text")
-    val text: String?
+    val text: String?,
+    @JsonProperty("attachments")
+    val attachments: Attachments?
+)
+
+data class Geo(
+    @JsonProperty("place_id")
+    val placeId: String?
 )
 
 data class Attachments(

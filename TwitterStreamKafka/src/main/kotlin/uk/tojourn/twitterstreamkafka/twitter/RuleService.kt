@@ -25,33 +25,21 @@ class RuleService(val webClient: WebClient, val config: TwitterConfig) {
 
     fun createRules(config: TwitterConfig) = webClient.post()
             .uri(config.url + "/rules")
-            .body(
-                    BodyInserters.fromValue(
-                            createRulesFunction(config.rules).trimMargin()
-                    )
-            )
+            .body(BodyInserters.fromValue(createRulesFunction(config.rules).trimMargin()))
             .retrieve()
             .bodyToMono<String>()
             .block()
 
     fun cleanExistingRules() {
-        val getExistingRuleResponse = webClient.get()
+        val existingRuleIds = webClient.get()
                 .uri("${config.url}/rules")
                 .retrieve()
                 .bodyToMono<JsonNode>()
                 .block()
+                ?.get("data")?.mapNotNull { it?.get("id")?.textValue() }.orEmpty()
 
-        val existingRuleIds = JSONArray(getExistingRuleResponse
-                ?.get("data")
-                ?.mapNotNull {
-                    it?.get("id")?.textValue()
-                })
-
-        // TODO if no rules don't run
-        val deleteRuleRequestBody = JSONObject()
-                .put("delete",
-                        JSONObject().put("ids", existingRuleIds)
-                )
+        if(existingRuleIds.isNotEmpty()) {
+            val deleteRuleRequestBody = JSONObject().put("delete", JSONObject().put("ids", JSONArray(existingRuleIds) ))
 
             webClient.post()
                 .uri(config.url + "/rules")

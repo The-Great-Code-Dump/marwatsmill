@@ -1,5 +1,6 @@
 package com.jm.twitterstream
 
+import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -11,6 +12,7 @@ import org.springframework.context.ConfigurableApplicationContext
 import org.springframework.context.annotation.Configuration
 import mu.KotlinLogging
 import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Primary
 
 private val logger = KotlinLogging.logger {}
 
@@ -38,6 +40,11 @@ class TwitterStreamContextConfiguration(
         }
     }
 
+    @Primary
     @Bean
     fun objectMapper(): ObjectMapper = jacksonObjectMapper()
+
+    @Bean(value = ["missingPropsObjectMapper"])
+    fun missingPropsObjectMapper(): ObjectMapper =
+        jacksonObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
 }

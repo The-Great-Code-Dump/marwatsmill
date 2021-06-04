@@ -1,0 +1,357 @@
+{
+  "data": {
+    "attachments": {
+      "media_keys": [
+        "16_1400822273951535109"
+      ]
+    },
+    "conversation_id": "1400822281224568834",
+    "lang": "en",
+    "possibly_sensitive": false,
+    "entities": {
+      "urls": [
+        {
+          "start": 18,
+          "end": 41,
+          "url": "https://t.co/Cj3KU5Q4OL",
+          "expanded_url": "https://twitter.com/northernus/status/1400822281224568834/photo/1",
+          "display_url": "pic.twitter.com/Cj3KU5Q4OL"
+        },
+        {
+          "start": 42,
+          "end": 65,
+          "url": "https://t.co/roVrMWo7Ps",
+          "expanded_url": "https://twitter.com/Andrew_Ivins/status/1400805867793141762",
+          "display_url": "twitter.com/Andrew_Ivins/s…"
+        }
+      ]
+    },
+    "author_id": "2388291139",
+    "source": "Twitter for Android",
+    "id": "1400822281224568834",
+    "reply_settings": "everyone",
+    "created_at": "2021-06-04T14:30:32.000Z",
+    "referenced_tweets": [
+      {
+        "type": "quoted",
+        "id": "1400805867793141762"
+      }
+    ],
+    "text": "I'm sorry.. what? https://t.co/Cj3KU5Q4OL https://t.co/roVrMWo7Ps",
+    "public_metrics": {
+      "retweet_count": 0,
+      "reply_count": 0,
+      "like_count": 0,
+      "quote_count": 0
+    },
+    "context_annotations": [
+      {
+        "domain": {
+          "id": "3",
+          "name": "TV Shows",
+          "description": "Television shows from around the world"
+        },
+        "entity": {
+          "id": "10000611558",
+          "name": "College Football",
+          "description": "All the action from NCAA college football."
+        }
+      },
+      {
+        "domain": {
+          "id": "10",
+          "name": "Person",
+          "description": "Named people in the world like Nelson Mandela"
+        },
+        "entity": {
+          "id": "893180245007716352",
+          "name": "Tom Allen",
+          "description": "Tom Allen"
+        }
+      },
+      {
+        "domain": {
+          "id": "11",
+          "name": "Sport",
+          "description": "Types of sports, like soccer and basketball"
+        },
+        "entity": {
+          "id": "689566306014617600",
+          "name": "American football"
+        }
+      },
+      {
+        "domain": {
+          "id": "26",
+          "name": "Sports League",
+          "description": ""
+        },
+        "entity": {
+          "id": "892080380425125890",
+          "name": "NCAA Football",
+          "description": "NCAA Men's Football"
+        }
+      },
+      {
+        "domain": {
+          "id": "65",
+          "name": "Interests and Hobbies Vertical",
+          "description": "Top level interests and hobbies groupings, like Food or Travel"
+        },
+        "entity": {
+          "id": "847544972781826048",
+          "name": "Careers",
+          "description": "Careers"
+        }
+      },
+      {
+        "domain": {
+          "id": "66",
+          "name": "Interests and Hobbies Category",
+          "description": "A grouping of interests and hobbies entities, like Novelty Food or Destinations"
+        },
+        "entity": {
+          "id": "961961812492148736",
+          "name": "Recruitment",
+          "description": "Recruitment"
+        }
+      },
+      {
+        "domain": {
+          "id": "93",
+          "name": "Coach",
+          "description": "A Coach like 'Bill Belichick'"
+        },
+        "entity": {
+          "id": "893180245007716352",
+          "name": "Tom Allen",
+          "description": "Tom Allen"
+        }
+      }
+    ]
+  },
+  "includes": {
+    "users": [
+      {
+        "description": "FSU '94 / Bleed Garnet & Gold \uD83C\uDF62 / 6⭐\uD83C\uDDFA\uD83C\uDDF2 / Chance Favors a Prepared Mind / LifeCook\uD83D\uDD2A / DogLife\uD83D\uDC3E /⚓\uD83C\uDFA3\uD83E\uDD3F⛳\uD83C\uDFBF",
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1396189009647386626/a_umI0UP_normal.jpg",
+        "protected": false,
+        "id": "2388291139",
+        "url": "",
+        "created_at": "2014-03-14T02:53:56.000Z",
+        "username": "northernus",
+        "verified": false,
+        "name": "MichiganNOLE\uD83C\uDF62",
+        "location": "Michigan, USA",
+        "public_metrics": {
+          "followers_count": 151,
+          "following_count": 74,
+          "tweet_count": 4669,
+          "listed_count": 1
+        }
+      },
+      {
+        "description": "@247sports analyst/writer/podcaster/photog based in the Sunshine State.",
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1157814567063511040/VT7hhfYw_normal.jpg",
+        "protected": false,
+        "id": "37545948",
+        "url": "https://t.co/PVCdffrZaj",
+        "pinned_tweet_id": "1398679524125126657",
+        "created_at": "2009-05-04T00:33:31.000Z",
+        "username": "Andrew_Ivins",
+        "verified": true,
+        "name": "Andrew Ivins",
+        "location": "South Florida",
+        "public_metrics": {
+          "followers_count": 28882,
+          "following_count": 1176,
+          "tweet_count": 14974,
+          "listed_count": 239
+        }
+      }
+    ],
+    "tweets": [
+      {
+        "attachments": {
+          "media_keys": [
+            "3_1400805862218813445"
+          ]
+        },
+        "conversation_id": "1400805867793141762",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "entities": {
+          "urls": [
+            {
+              "start": 173,
+              "end": 196,
+              "url": "https://t.co/mcGIiw7pkA",
+              "expanded_url": "https://247sports.com/Article/Indiana-Hoosiers-recruiting-Florida-satellite-camps-Tom-Allen-Tiawan-Mullen-166082888/",
+              "display_url": "247sports.com/Article/Indian…",
+              "images": [
+                {
+                  "url": "https://pbs.twimg.com/news_img/1400805870590644226/En-9os_I?format=jpg&name=orig",
+                  "width": 1200,
+                  "height": 619
+                },
+                {
+                  "url": "https://pbs.twimg.com/news_img/1400805870590644226/En-9os_I?format=jpg&name=150x150",
+                  "width": 150,
+                  "height": 150
+                }
+              ],
+              "status": 200,
+              "title": "Indiana continues to prioritize the state of Florida on the recruiting trail",
+              "description": "Tom Allen and the Hoosiers are targeting a number of top prospects from the Sunshine State in 2022.",
+              "unwound_url": "https://247sports.com/Article/Indiana-Hoosiers-recruiting-Florida-satellite-camps-Tom-Allen-Tiawan-Mullen-166082888/"
+            },
+            {
+              "start": 197,
+              "end": 220,
+              "url": "https://t.co/AaTxPaKZq7",
+              "expanded_url": "https://twitter.com/Andrew_Ivins/status/1400805867793141762/photo/1",
+              "display_url": "pic.twitter.com/AaTxPaKZq7"
+            }
+          ],
+          "annotations": [
+            {
+              "start": 33,
+              "end": 39,
+              "probability": 0.5452,
+              "type": "Organization",
+              "normalized_text": "Florida"
+            },
+            {
+              "start": 53,
+              "end": 61,
+              "probability": 0.9985,
+              "type": "Person",
+              "normalized_text": "Tom Allen"
+            },
+            {
+              "start": 71,
+              "end": 77,
+              "probability": 0.8202,
+              "type": "Organization",
+              "normalized_text": "Indiana"
+            },
+            {
+              "start": 113,
+              "end": 120,
+              "probability": 0.8526,
+              "type": "Organization",
+              "normalized_text": "Hoosiers"
+            },
+            {
+              "start": 133,
+              "end": 146,
+              "probability": 0.8313,
+              "type": "Organization",
+              "normalized_text": "Sunshine State"
+            }
+          ]
+        },
+        "author_id": "37545948",
+        "source": "Tweetbot for Mac",
+        "id": "1400805867793141762",
+        "reply_settings": "everyone",
+        "created_at": "2021-06-04T13:25:19.000Z",
+        "text": "Not many recruiting the state of Florida better than Tom Allen and his Indiana staff right now. Some more on the Hoosiers efforts in Sunshine State after a big 2020 season: https://t.co/mcGIiw7pkA https://t.co/AaTxPaKZq7",
+        "public_metrics": {
+          "retweet_count": 10,
+          "reply_count": 0,
+          "like_count": 59,
+          "quote_count": 4
+        },
+        "geo": {
+          "place_id": "6c686af766d8429c"
+        },
+        "context_annotations": [
+          {
+            "domain": {
+              "id": "3",
+              "name": "TV Shows",
+              "description": "Television shows from around the world"
+            },
+            "entity": {
+              "id": "10000611558",
+              "name": "College Football",
+              "description": "All the action from NCAA college football."
+            }
+          },
+          {
+            "domain": {
+              "id": "10",
+              "name": "Person",
+              "description": "Named people in the world like Nelson Mandela"
+            },
+            "entity": {
+              "id": "893180245007716352",
+              "name": "Tom Allen",
+              "description": "Tom Allen"
+            }
+          },
+          {
+            "domain": {
+              "id": "11",
+              "name": "Sport",
+              "description": "Types of sports, like soccer and basketball"
+            },
+            "entity": {
+              "id": "689566306014617600",
+              "name": "American football"
+            }
+          },
+          {
+            "domain": {
+              "id": "26",
+              "name": "Sports League",
+              "description": ""
+            },
+            "entity": {
+              "id": "892080380425125890",
+              "name": "NCAA Football",
+              "description": "NCAA Men's Football"
+            }
+          },
+          {
+            "domain": {
+              "id": "65",
+              "name": "Interests and Hobbies Vertical",
+              "description": "Top level interests and hobbies groupings, like Food or Travel"
+            },
+            "entity": {
+              "id": "847544972781826048",
+              "name": "Careers",
+              "description": "Careers"
+            }
+          },
+          {
+            "domain": {
+              "id": "66",
+              "name": "Interests and Hobbies Category",
+              "description": "A grouping of interests and hobbies entities, like Novelty Food or Destinations"
+            },
+            "entity": {
+              "id": "961961812492148736",
+              "name": "Recruitment",
+              "description": "Recruitment"
+            }
+          },
+          {
+            "domain": {
+              "id": "93",
+              "name": "Coach",
+              "description": "A Coach like 'Bill Belichick'"
+            },
+            "entity": {
+              "id": "893180245007716352",
+              "name": "Tom Allen",
+              "description": "Tom Allen"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
