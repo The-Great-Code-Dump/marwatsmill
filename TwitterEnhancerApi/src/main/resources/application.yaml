@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: "TwitterEnhancerApi"
+  main:
+    banner-mode: "off"
+    allow-bean-definition-overriding: true
+
+server:
+  port: 8080
+    shutdown: graceful

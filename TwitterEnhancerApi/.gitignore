@@ -22,7 +22,6 @@ build/
 *.iml
 *.ipr
 out/
-.idea/modules.xml
 
 ### NetBeans ###
 /nbproject/private/
