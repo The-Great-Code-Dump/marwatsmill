@@ -1,5 +1,3 @@
-CREATE OR REPLACE FUNCTION update_timestamp() RETURNS TRIGGER AS $$
-
 CREATE TABLE IF NOT EXISTS tweet (
     id bigint NOT NULL,
     author_id bigint NOT NULL,
