@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-data class EnhancedTweet(
+data class  EnhancedTweet(
     @JsonProperty("data")
     val data: Data?,
     @JsonProperty("includes")
