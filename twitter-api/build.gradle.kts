@@ -1,10 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id("org.springframework.boot") version "2.4.5"
-	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	kotlin("jvm") version "1.4.32"
 	kotlin("plugin.spring") version "1.4.32"
+	id("org.springframework.boot") version "2.5.1"
+	id("io.spring.dependency-management") version "1.0.11.RELEASE"
+	id("com.github.ben-manes.versions") version "0.39.0"
 }
 
 group = "uk.marwatsmill"
@@ -16,7 +17,7 @@ repositories {
 }
 
 object Versions {
-	const val kotlintest = "4.6.0"
+	const val kotest = "4.6.0"
 }
 
 dependencies {
@@ -32,13 +33,13 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 
 	// Logging
-	implementation("io.github.microutils:kotlin-logging:2.0.6")
+	implementation("io.github.microutils:kotlin-logging:2.0.8")
 
 	// Testing
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("io.kotest:kotest-runner-junit5:${Versions.kotlintest}")
-	testImplementation("io.kotest:kotest-assertions-core:${Versions.kotlintest}")
-	testImplementation("io.kotest:kotest-property:${Versions.kotlintest}")
+	testImplementation("io.kotest:kotest-runner-junit5:${Versions.kotest}")
+	testImplementation("io.kotest:kotest-assertions-core:${Versions.kotest}")
+	testImplementation("io.kotest:kotest-property:${Versions.kotest}")
 }
 
 tasks.withType<KotlinCompile> {
