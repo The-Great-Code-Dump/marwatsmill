@@ -4,23 +4,21 @@ services:
     image: mysql:8.0.25
     restart: always
     ports:
-      - 5432:5432
+      - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: twitter-api-enhancer
     container_name: "twitter-api-enhancer-db"
-#    volumes:
-#      - ../../src/test/resources/jdbc:/jdbc
-#  flyway:
-#    image: flyway/flyway
-#    command: migrate
-#    environment:
-#      FLYWAY_URL: jdbc:mysql://db/twitter-api-enhancer
-#      FLYWAY_USER: root
-#      FLYWAY_PASSWORD: root
-#      FLYWAY_CONNECT_RETRIES: 5
-#      FLYWAY_SCHEMAS: twitter-api-enhancer
-#    volumes:
-#      - /schema:/flyway/sql
-#    depends_on:
-#      - db
+  flyway:
+    image: flyway/flyway
+    command: migrate
+    environment:
+      FLYWAY_URL: jdbc:mysql://db/twitter-api-enhancer
+      FLYWAY_USER: root
+      FLYWAY_PASSWORD: root
+      FLYWAY_CONNECT_RETRIES: 5
+      FLYWAY_SCHEMAS: twitter-api-enhancer
+    volumes:
+      - ./schema:/flyway/sql
+    depends_on:
+      - db
