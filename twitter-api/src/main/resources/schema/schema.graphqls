@@ -1,0 +1,16 @@
+type Query {
+    tweet(id: ID): Tweet
+    tweetsByAuthorId(authorId: ID): [Tweet]
+}
+
+type Tweet {
+    id: ID!,
+    authorId: ID,
+    conversationId: ID,
+    createdAt: String,
+    lang: String,
+    possibleSensitive: Boolean,
+    replySettings: String,
+    source: String,
+    text: String
+}
