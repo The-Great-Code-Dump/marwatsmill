@@ -1,4 +1,4 @@
-package uk.marwatsmill.twitterenhancerapi
+package tsg.twitter.api
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
