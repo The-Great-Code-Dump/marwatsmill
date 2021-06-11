@@ -13,5 +13,8 @@ CREATE TABLE IF NOT EXISTS tweet (
 );
 
 
-    INSERT INTO tweet VALUES (12341, 23, 69, "test1", "test2", FALSE, "test3", "test4", "tug" );
-    INSERT INTO tweet VALUES (99232, 42, 74, "test3", "test4", TRUE, "test5", "test6", "yey" );
+    INSERT INTO tweet
+        (id, author_id, conversation_id, created_at, lang, possible_sensitive, reply_settings, source, text, last_updated)
+        VALUES
+               (12341, 23, 69, 'test1', 'test2', FALSE, 'test3', 'test4', 'tug' ),
+               (99232, 42, 74, 'test3', 'test4', TRUE, 'test5', 'test6', 'yey' );
