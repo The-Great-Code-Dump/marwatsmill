@@ -14,11 +14,16 @@ class KafkaConsumer(val twitterService: TwitterService) {
     fun listen(@Payload tweet: String) {
         logger.info { "Twitter ID : \"$tweet\"" }
 
+        try {
         val superTweet = twitterService.getEnhancedTweet(tweet)
 
         logger.info { superTweet }
 
         Thread.sleep(15000L)
+        } catch (e: Exception) {
+            logger.error(e) { "Oooops"  }
+            Thread.sleep(15000L)
+        }
     }
 
 }
