@@ -18,6 +18,7 @@ repositories {
 
 object Versions {
 	const val kotest = "4.6.0"
+	const val micrometer = "1.7.0"
 }
 
 dependencies {
@@ -25,6 +26,7 @@ dependencies {
 	implementation("com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter")
 	implementation("org.springframework.boot:spring-boot-starter")
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.springframework.boot:spring-boot-starter-jdbc")
@@ -38,6 +40,10 @@ dependencies {
 
 	// Logging
 	implementation("io.github.microutils:kotlin-logging:2.0.8")
+
+	// Metrics
+	implementation("io.micrometer:micrometer-core:${Versions.micrometer}")
+	implementation("io.micrometer:micrometer-registry-prometheus:${Versions.micrometer}")
 
 	// Testing
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
