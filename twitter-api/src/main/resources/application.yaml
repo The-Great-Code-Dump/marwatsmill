@@ -1,4 +1,5 @@
 spring:
+  jmx.enabled: true
   application:
     name: "twitter-api"
   main:
