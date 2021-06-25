@@ -94,7 +94,9 @@ data class Geo(
 
 data class Attachments(
     @JsonProperty("media_keys")
-    val mediaKeys: List<String>?
+    val mediaKeys: List<String>?,
+    @JsonProperty("poll_ids")
+    val pollIds: List<Long>?
 )
 
 data class ContextAnnotation(

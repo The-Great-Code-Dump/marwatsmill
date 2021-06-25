@@ -11,13 +11,14 @@ import org.springframework.context.ApplicationListener
 import org.springframework.context.ConfigurableApplicationContext
 import org.springframework.context.annotation.Configuration
 import mu.KotlinLogging
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Primary
 
 private val logger = KotlinLogging.logger {}
 
 @SpringBootApplication
-@EnableConfigurationProperties(TwitterStreamConfiguration::class)
+@ConfigurationPropertiesScan("tsg.twitter.enhancer")
 class TwitterStreamApplication
 
 fun main(args: Array<String>) {

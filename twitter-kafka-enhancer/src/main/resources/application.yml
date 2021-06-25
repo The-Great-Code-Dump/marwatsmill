@@ -7,6 +7,11 @@ management:
       exposure:
         include: [ "*" ]
 
+kafka:
+  server: localhost:9092
+  topics:
+    twitter: "tweets"
+
 twitter:
   apiKey: ${API_KEY}
   apiSecretKey: ${API_SECRET_KEY}
