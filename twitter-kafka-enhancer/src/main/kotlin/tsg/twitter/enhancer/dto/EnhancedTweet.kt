@@ -67,6 +67,8 @@ data class Tweet(
     val id: String?,
         @JsonProperty("lang")
     val lang: String?,
+        @JsonProperty("in_reply_to_user_id")
+    val inReplyToUserId: String?,
         @JsonProperty("possibly_sensitive")
     val possiblySensitive: Boolean?,
         @JsonProperty("public_metrics")
@@ -80,7 +82,9 @@ data class Tweet(
         @JsonProperty("text")
     val text: String?,
         @JsonProperty("attachments")
-    val attachments: Attachments?
+    val attachments: Attachments?,
+        @JsonProperty(value = "referenced_tweets", required = false)
+    val referencedTweets: List<ReferencedTweet>?,
 )
 
 data class Geo(
@@ -103,12 +107,23 @@ data class ContextAnnotation(
 data class Entities(
         @JsonProperty("annotations")
     val annotations: List<Annotation>?,
+        @JsonProperty("cashtags")
+    val cashtags: List<Cashtag>?,
         @JsonProperty("hashtags")
     val hashtags: List<Hashtag>?,
         @JsonProperty("mentions")
     val mentions: List<Mention>?,
         @JsonProperty("urls")
     val urls: List<Url>?
+)
+
+data class Cashtag(
+        @JsonProperty("end")
+        val end: Int?,
+        @JsonProperty("start")
+        val start: Int?,
+        @JsonProperty("tag")
+        val tag: String?
 )
 
 data class PublicMetrics(
@@ -154,6 +169,8 @@ data class Annotation(
 )
 
 data class Mention(
+    @JsonProperty("id")
+    val id: Long?,
     @JsonProperty("end")
     val end: Int?,
     @JsonProperty("start")

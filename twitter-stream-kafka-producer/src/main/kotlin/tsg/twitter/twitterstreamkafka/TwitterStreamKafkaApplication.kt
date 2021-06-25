@@ -23,7 +23,7 @@ import tsg.twitter.twitterstreamkafka.config.KafkaConfig
 import tsg.twitter.twitterstreamkafka.config.TwitterConfig
 
 @SpringBootApplication
-@ConfigurationPropertiesScan("uk.tojourn.twitterstreamkafka.config")
+@ConfigurationPropertiesScan("tsg.twitter.twitterstreamkafka.config")
 class TwitterStreamKafkaApplication
 
 fun main(args: Array<String>) {

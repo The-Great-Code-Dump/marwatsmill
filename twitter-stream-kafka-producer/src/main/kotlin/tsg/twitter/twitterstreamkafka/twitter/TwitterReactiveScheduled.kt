@@ -26,7 +26,7 @@ class TwitterReactiveScheduled(val twitterConfig: TwitterConfig, val kafkaConfig
     fun processTweets() {
         twitterRepo.getTweets()
                 .subscribe{ twitterResponse ->
-                    logger.info { "Sending message to shit hot tweets $twitterResponse" }
+                    logger.info { twitterResponse }
                     kafkaTemplate.send(kafkaConfig.topics.twitter, twitterResponse.data.id.toString())
                 }
     }

@@ -15,14 +15,13 @@ class KafkaConsumer(val twitterService: TwitterService) {
         logger.info { "Twitter ID : \"$tweet\"" }
 
         try {
-        val superTweet = twitterService.getEnhancedTweet(tweet)
+            //twittered handles rate limiting for us.
+            val superTweet = twitterService.getEnhancedTweet(tweet)
+            logger.info { superTweet }
 
-        logger.info { superTweet }
-
-        Thread.sleep(15000L)
         } catch (e: Exception) {
-            logger.error(e) { "Oooops"  }
-            Thread.sleep(15000L)
+            val responseAsString = twitterService.getEnhancedTweetAsString(tweet)
+            logger.error(e) { responseAsString }
         }
     }
 

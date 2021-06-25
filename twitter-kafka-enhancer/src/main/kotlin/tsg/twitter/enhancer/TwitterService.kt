@@ -30,13 +30,10 @@ class TwitterService(val twitterStreamConfiguration: TwitterStreamConfiguration,
         twitterClient.requestHelperV2.getRequest(twitterClient.urlHelper.getTweetUrl(tweetId), String::class.java).get()
 
     fun getEnhancedTweet(tweetId: String): EnhancedTweet {
-
-        val tweet = makeRequest(tweetId)
-
-        logger.info { tweet }
-
-        return mapper.readValue(tweet)
+        return mapper.readValue(
+                makeRequest(tweetId)
+        )
     }
 
-    fun getRateLimit() = twitterClient.rateLimitStatus.resources["tweets"]
+    fun getRateLimit() = twitterClient.rateLimitStatus.resources
 }

@@ -36,7 +36,11 @@ class RuleService(val webClient: WebClient, val config: TwitterConfig) {
                 .retrieve()
                 .bodyToMono<JsonNode>()
                 .block()
-                ?.get("data")?.mapNotNull { it?.get("id")?.textValue() }.orEmpty()
+                ?.get("data")?.map {
+                    logger.info { it }
+                    it
+                }?.mapNotNull { it?.get("id")?.textValue() }.orEmpty()
+
 
         if(existingRuleIds.isNotEmpty()) {
             val deleteRuleRequestBody = JSONObject().put("delete", JSONObject().put("ids", JSONArray(existingRuleIds) ))
