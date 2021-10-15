@@ -1,4 +1,4 @@
-package tsg.twitter.twitterstreamkafka.twitter
+package uk.tojourn.twitter.stream.skybet.twitter
 
 data class TwitterResponse(val data: Tweet, val matchingRules: List<Rule> )
 data class Tweet(val id: Long, val text: String)

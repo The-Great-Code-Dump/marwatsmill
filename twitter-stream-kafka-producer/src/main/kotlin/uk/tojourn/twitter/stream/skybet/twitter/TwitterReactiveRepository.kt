@@ -1,5 +1,6 @@
-package tsg.twitter.twitterstreamkafka.twitter
+package uk.tojourn.twitter.stream.skybet.twitter
 
+import TwitterConfig
 import com.fasterxml.jackson.databind.ObjectMapper
 import mu.KotlinLogging
 import org.springframework.http.MediaType
@@ -7,7 +8,7 @@ import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.client.WebClient
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
-import tsg.twitter.twitterstreamkafka.config.TwitterConfig
+
 
 private val logger = KotlinLogging.logger { }
 

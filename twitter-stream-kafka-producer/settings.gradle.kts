@@ -1,1 +1,1 @@
-rootProject.name = "twitter-stream-kafka-producer"
+rootProject.name = "twitter-stream-skybet"

@@ -43,3 +43,4 @@ build.log
 
 /tools/secrets
 /tools/.env
+/secret

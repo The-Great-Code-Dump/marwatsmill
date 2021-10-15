@@ -1,13 +1,13 @@
-package tsg.twitter.twitterstreamkafka
+package uk.tojourn.twitter.stream.skybet
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import io.kotest.assertions.asClue
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import tsg.twitter.twitterstreamkafka.twitter.Rule
-import tsg.twitter.twitterstreamkafka.twitter.Tweet
-import tsg.twitter.twitterstreamkafka.twitter.TwitterResponse
+import uk.tojourn.twitter.stream.skybet.twitter.Rule
+import uk.tojourn.twitter.stream.skybet.twitter.Tweet
+import uk.tojourn.twitter.stream.skybet.twitter.TwitterResponse
 
 class StringSpecExample : StringSpec() {
     private val objectMapper = jacksonObjectMapper().setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE)

@@ -11,14 +11,25 @@ spring:
       fail-on-unknown-properties: false
 
 
-kafka:
-  server: localhost:9092
-  topics:
-    twitter: "tweets"
-
-
 twitter:
   url: ${TWITTER_BASEURL}
   bearerToken: ${TWITTER_BEARER_TOKEN}
   rules:
-    microsoft: windows
+    media-query: "(@SkyBet OR @SkyBetHelp) has:media"
+    loading-query: "loading (@MattchupichuW OR @SkyBet OR @SkyBetHelp)"
+    down-query: "down (@MattchupichuW OR @SkyBet OR @SkyBetHelp)"
+    stopped-query: "stopped (@MattchupichuW OR @SkyBet OR @SkyBetHelp)"
+    banned-query: "banned (@MattchupichuW OR @SkyBet OR @SkyBetHelp)"
+
+management:
+  server.port: 8091
+  metrics:
+    tags:
+      app: tojourn
+  endpoints:
+    web:
+      exposure:
+        include: info, health, prometheus, livenessstate, mappings, metrics
+  endpoint.health.probes.enabled: true
+  health.livenessState.enabled: true
+  health.readinessState.enabled: true
