@@ -15,11 +15,22 @@ twitter:
   url: ${TWITTER_BASEURL}
   bearerToken: ${TWITTER_BEARER_TOKEN}
   rules:
-    media-query: "(@SkyBet OR @SkyBetHelp) has:media"
-    loading-query: "loading (@MattchupichuW OR @SkyBet OR @SkyBetHelp)"
-    down-query: "down (@MattchupichuW OR @SkyBet OR @SkyBetHelp)"
-    stopped-query: "stopped (@MattchupichuW OR @SkyBet OR @SkyBetHelp)"
-    banned-query: "banned (@MattchupichuW OR @SkyBet OR @SkyBetHelp)"
+    skybet-media: "(@SkyBet) has:media"
+    skybet-loading: "loading (@SkyBet)"
+    skybet-down: "down (@SkyBet)"
+    skybet-stopped: "stopped (@SkyBet)"
+    skybet-banned: "banned (@SkyBet)"
+    skybet-help-media: "(@SkyBetHelp) has:media"
+    skybet-help-loading: "loading (@SkyBetHelp)"
+    skybet-help-down: "down (@SkyBetHelp)"
+    skybet-help-stopped: "stopped (@SkyBetHelp)"
+    skybet-help-banned: "banned (@SkyBetHelp)"
+    matt-media: "(@MattchupichuW) has:media"
+    matt-loading: "loading (@MattchupichuW)"
+    matt-down: "down (@MattchupichuW)"
+    matt-stopped: "stopped (@MattchupichuW)"
+    matt-banned: "banned (@MattchupichuW)"
+
 
 management:
   server.port: 8091

@@ -31,27 +31,27 @@ class RuleService(val webClient: WebClient, val config: TwitterConfig) {
             .bodyToMono<String>()
             .block()
 
-    fun showExistingRules() {
-        val existingRuleIds = webClient.get()
-                .uri("${config.url}/rules")
-                .retrieve()
-                .bodyToMono<JsonNode>()
-                .block()
-                ?.get("data")?.map {
-                    logger.info { "Existing rule found $it" }
-                    it
-                }?.mapNotNull { it?.get("id")?.textValue() }.orEmpty()
-
-//
-//        if(existingRuleIds.isNotEmpty()) {
-//            val deleteRuleRequestBody = JSONObject().put("delete", JSONObject().put("ids", JSONArray(existingRuleIds) ))
-//
-//            webClient.post()
-//                .uri(config.url + "/rules")
-//                .body(BodyInserters.fromValue(deleteRuleRequestBody.toString()))
+//    fun showExistingRules() {
+//        val existingRuleIds = webClient.get()
+//                .uri("${config.url}/rules")
 //                .retrieve()
-//                .bodyToMono<String>()
+//                .bodyToMono<JsonNode>()
 //                .block()
-//        }
-    }
+//                ?.get("data")?.map {
+//                    logger.info { "Existing rule found $it" }
+//                    it
+//                }?.mapNotNull { it?.get("id")?.textValue() }.orEmpty()
+//
+//
+////        if(existingRuleIds.isNotEmpty()) {
+////            val deleteRuleRequestBody = JSONObject().put("delete", JSONObject().put("ids", JSONArray(existingRuleIds) ))
+////
+////            webClient.post()
+////                .uri(config.url + "/rules")
+////                .body(BodyInserters.fromValue(deleteRuleRequestBody.toString()))
+////                .retrieve()
+////                .bodyToMono<String>()
+////                .block()
+////        }
+//    }
 }
